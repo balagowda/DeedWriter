@@ -16,7 +16,8 @@
 .nav-links{
   display: flex;
   align-items: center;
-  width: 20%;
+  width: 23%;
+  justify-content: space-evenly;
 }
 
 .nav-link {

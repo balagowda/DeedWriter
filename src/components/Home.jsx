@@ -1,12 +1,17 @@
 import React from "react";
 import "../Styles/home.css";
 import { Link } from "react-router-dom";
+import { useLanguage } from '../context/LanguageContext'
 
 const Home = () => {
+
+  const { language } = useLanguage();
+
   return (
     <div className="home-container">
       <div className="home-header">
         <h2 className="eng">N Purushothama</h2>
+        <h2 className={language}>ಎನ್ ಪುರುಷೋತ್ತಮ</h2>
         <p className="sub-header-1 eng">Deed writer at sub-registrar office <span style={{color:"rgb(235, 192, 23)"}}>Heggadadevanakote</span></p><br />
         <p className="sub-header-2 eng">Registration ,Record verification, Non-govt Agreements</p>
       </div>
