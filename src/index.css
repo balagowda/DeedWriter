@@ -3,6 +3,8 @@
   --home_header: black;
   --home_subheader: black;
   --service_background: rgb(242, 245, 247);
+  --contact_background:linear-gradient(90.01deg, rgba(0, 179, 159, 0.54) 0.53%, rgba(71, 126, 150, 0.26) 51.1%, rgb(255, 255, 255,0.16) 99.99%);
+  --contact_card:#ffffff;
 }
 
 [data-theme="dark"] {
@@ -10,23 +12,13 @@
   --home_header: #ffffff;
   --home_subheader: #ffffff;
   --service_background: rgb(29, 29, 29);
+  --contact_background:linear-gradient(90.01deg, rgba(0, 179, 159, 0.54) 0.53%, rgba(71, 126, 150, 0.26) 51.1%, rgba(18, 18, 18, 0.16) 99.99%);
+  --contact_card:rgb(0, 179, 159);
 }
 
 * {
   transition: all 0.3s ease-in-out;
 }
-
-.eng{
-  display: none;
-}
-
-/* #language_check:checked + .Kann {
-  display: block;
-}
-
-#language_check:not(:checked) + .eng {
-  display: block;
-} */
 
 body {
   margin: 0;

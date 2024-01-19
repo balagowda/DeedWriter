@@ -1,0 +1,98 @@
+.contact-container {
+  width: 100%;
+  background-color: var(--body_background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.contact-box {
+  width: 40%;
+  height: 500px;
+  /* background-color: var(--service_background); */
+  margin-top: 5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  margin-top: 5rem;
+  justify-content: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background: var(--contact_background);
+}
+
+.mob {
+    color: var(--home_header);
+  letter-spacing: 1px;
+  font-size: 26px;
+}
+
+.contact-min-box {
+  width: 400px;
+  height: 70px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: var(--home_header);
+  background-color: var(--contact_card);
+  cursor: pointer;
+}
+
+.link-mail{
+    color: var(--home_header);
+    text-decoration: none;
+}
+
+.dot-line{
+    color: var(--home_header);
+}
+
+@media (max-width: 480px) {
+    .contact-box{
+        width: 85%;
+    }
+    .mob {
+        font-size: 20px; 
+    }
+    .contact-min-box{
+        width: 86%;
+        height: 50px;
+        font-size: 15px;
+    }
+  
+  }
+
+  @media (min-width: 481px) and (max-width: 790px){
+    .contact-box{
+        width: 55%;
+    }
+    .mob {
+        font-size: 20px; 
+    }
+    .contact-min-box{
+        width: 85%;
+        height: 50px;
+        font-size: 15px;
+    }
+  }
+  
+  @media (min-width: 791px) and (max-width: 1200px) {
+    .contact-box{
+        width: 46%;
+    }
+    .mob {
+        font-size: 22px; 
+    }
+    .contact-min-box{
+        width: 80%;
+        height: 50px;
+        font-size: 18px;
+    }
+  }

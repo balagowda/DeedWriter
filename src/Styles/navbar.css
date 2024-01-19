@@ -13,7 +13,7 @@
   background-color: var(--body_background);
 }
 
-.nav-links{
+.nav-links {
   display: flex;
   align-items: center;
   width: 23%;
@@ -23,31 +23,93 @@
 .nav-link {
   text-decoration: none;
   padding: 16px 18px;
-  position: relative;
   font-weight: 600;
   color: rgb(0, 179, 159);
-  margin-left: 3px;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   border: 1px solid rgb(0, 211, 169);
   border-radius: 5px;
 }
 
-/* .nav-link:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
+.nav-img {
+  position: fixed;
   left: 0;
-  background-color: red;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+  margin-left: 10px;
 }
 
-.nav-link:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-} */
+/* hambergur style */
+.hamburger {
+  width: 2rem;
+  height: 1.6rem;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  z-index: 5;
+  margin: 15px 15px;
+  display: none;
+}
+
+.burger {
+  width: 2rem;
+  height: 0.15rem;
+  border-radius: 10px;
+  background-color: var(--home_header);
+  transform-origin: 1px;
+  transition: all 0.3s linear;
+}
+
+@media (max-width: 790px) {
+  #display-ham {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    justify-self: flex-end;
+    align-self: flex-start;
+    position: relative;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 40vw;
+    height: 100%;
+    z-index: 5;
+    padding-left: 100px;
+    padding-top: 50px;
+    animation: slideInLeft 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    background-color: var(--service_background);
+    transform: translateX(-100%);
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+@media (min-width: 791px) and (max-width: 1200px) {
+  .nav-links {
+    width: 38%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav-links {
+    width: 26%;
+  }
+}

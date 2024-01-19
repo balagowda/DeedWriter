@@ -64,26 +64,22 @@
 
 #language_check:checked ~ .lang_slider--1 div:first-child {
 	transform: translateY(-100%);
-	background-color: black;
 	transition-delay: 1s;
 }
 
 #language_check:checked ~ .lang_slider--1 div:last-child {
 	transform: translateY(100%);
 	transition-delay: 1s;
-	background-color: black;
 }
 
 #language_check:checked ~ .lang_slider--2 {
 	transform: translateX(100%);
 	transition-delay: 0.5s;
-	background-color: black;
 }
 
 #language_check:checked ~ .lang_slider--3 {
 	transform: translateX(-100%);
 	transition-delay: 0s;
-	background-color: black;
 }
 
 .lang_slider--1 div:first-child {
