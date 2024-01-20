@@ -21,7 +21,7 @@ const Contact = () => {
   };
 
   const handleButtonClick = () => {
-    const telUri = `tel:${9900853784}`;
+    const telUri = `tel:+${919900853784}`;
     window.open(telUri, '_blank');
   };
 

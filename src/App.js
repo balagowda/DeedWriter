@@ -9,6 +9,7 @@ import Rent from "./components/Rent";
 import Partition from "./components/Partition";
 import Gift from "./components/Gift";
 import Sale from "./components/Sale";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <>
               <Navbar />
               <Contact />
+              <Footer />
             </>
           }
         />

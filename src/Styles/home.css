@@ -92,6 +92,23 @@
   z-index: 1;
 }
 
+.homecontact{
+  position: fixed;
+  top: 23rem;
+  width: 100px;
+}
+
+.home-contact-button{
+  border-radius: 25px;
+  padding: 8px;
+  background: rgb(0, 179, 159);
+  /* background-color: rgb(235, 192, 23); */
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  width: 100%;
+  display: none;
+}
+
 /* Media queries for responsiveness */
 
 @media (max-width: 480px) {
@@ -111,6 +128,10 @@
     font-size: 13px;
   }
 
+  .home-contact-button{
+    display: inline-block;
+  }
+
 }
 
 @media (min-width: 481px) and (max-width: 790px){
@@ -128,6 +149,10 @@
   
   .sub-header-2{
     font-size: 17px;
+  }
+
+  .home-contact-button{
+    display: inline-block;
   }
 }
 

@@ -9,14 +9,10 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="home-header">
-        <h2 >
-          {language === "eng" ? "N Purushothama" : "ಎನ್ ಪುರುಷೋತ್ತಮ"}
-        </h2>
+        <h2>{language === "eng" ? "N Purushothama" : "ಎನ್ ಪುರುಷೋತ್ತಮ"}</h2>
 
         <p className="sub-header-1">
-          {language === "eng"
-            ? "Document writer"
-            : "ಪತ್ರ ಬರಹಗಾರರು"}
+          {language === "eng" ? "Document writer" : "ಪತ್ರ ಬರಹಗಾರರು"}
 
           <span style={{ color: "rgb(235, 192, 23)" }}>
             {language === "eng" ? " Heggadadevanakote" : " ಹೆಗ್ಗಡದೇವನಕೋಟೆ"}
@@ -25,9 +21,16 @@ const Home = () => {
         <br />
 
         <p className="sub-header-2">
-        {language === "eng" ? "Registration and Non-registration Documents will be written" : "ನೋಂದಣಿ ಮತ್ತು ನೋಂದಣಿ-ರಹಿತ ಪತ್ರಗಳನ್ನು ಬರೆಯಲಾಗುವುದು"}
-          
+          {language === "eng"
+            ? "Registration and Non-registration Documents will be written"
+            : "ನೋಂದಣಿ ಮತ್ತು ನೋಂದಣಿ-ರಹಿತ ಪತ್ರಗಳನ್ನು ಬರೆಯಲಾಗುವುದು"}
         </p>
+
+        <div className="homecontact">
+          <Link to={'/contact'} className="link">
+            <span className="home-contact-button">Contact</span>
+          </Link>
+        </div>
       </div>
       <section className="home-services">
         <div className="service-container">
@@ -79,7 +82,9 @@ const Home = () => {
             </Link>
             <Link to={"/joint"} className="link">
               <div className="service-box">
-                {language === "eng" ? "Joint Development Agreement" : "ಜಂಟಿ ಅಭಿವೃದ್ಧಿ ಕರಾರು"}
+                {language === "eng"
+                  ? "Joint Development Agreement"
+                  : "ಜಂಟಿ ಅಭಿವೃದ್ಧಿ ಕರಾರು"}
               </div>
             </Link>
             <Link to={"/concent"} className="link">
@@ -89,7 +94,9 @@ const Home = () => {
             </Link>
             <Link to={"/attorney"} className="link">
               <div className="service-box">
-                {language === "eng" ? "General Power Attorney" : "ಸಾಮಾನ್ಯ ಅಧಿಕಾರ ಪತ್ರ"}
+                {language === "eng"
+                  ? "General Power Attorney"
+                  : "ಸಾಮಾನ್ಯ ಅಧಿಕಾರ ಪತ್ರ"}
               </div>
             </Link>
           </div>

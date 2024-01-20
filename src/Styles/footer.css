@@ -1,0 +1,14 @@
+.developer{
+    height: 80px;
+    background: var(--developer_background);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
+}
+
+.dev_contact{
+    font-size: small;
+}
