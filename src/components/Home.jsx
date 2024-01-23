@@ -27,8 +27,10 @@ const Home = () => {
         </p>
 
         <div className="homecontact">
-          <Link to={'/contact'} className="link">
-            <span className="home-contact-button">Contact</span>
+          <Link to={"/contact"} className="link">
+            <span className="home-contact-button">
+              {language === "eng" ? "Contact" : "ಸಂಪರ್ಕ"}
+            </span>
           </Link>
         </div>
       </div>

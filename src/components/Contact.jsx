@@ -12,11 +12,12 @@ import { useLanguage } from "../context/LanguageContext";
 const Contact = () => {
   const { language } = useLanguage();
 
-  const latitude = "12.084820387308788";
-  const longitude = "76.33497670409582";
+  // const latitude = "12.084805916318393";
+  // const longitude = "76.334935912306";
+  // `https://www.google.com/maps?q=${latitude},${longitude}`
 
   const handleClick = () => {
-    const mapUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+    const mapUrl = "https://maps.app.goo.gl/LjM9ruSQDW8TJVcc6"
     window.open(mapUrl, "_blank");
   };
 
