@@ -11,15 +11,15 @@ const Language = () => {
   };
 
   return (
-    <label class="lang_switch">
+    <label className="lang_switch">
       <input type="checkbox" id="language_check" onChange={handleCheckboxChange}/>
-      <div class="lang_slider lang_slider--0">ಕ</div>
-      <div class="lang_slider lang_slider--1">
+      <div className="lang_slider lang_slider--0">ಕ</div>
+      <div className="lang_slider lang_slider--1">
         <div></div>
         <div></div>
       </div>
-      <div class="lang_slider lang_slider--2"></div>
-      <div class="lang_slider lang_slider--3">Eng</div>
+      <div className="lang_slider lang_slider--2"></div>
+      <div className="lang_slider lang_slider--3">Eng</div>
     </label>
   );
 };

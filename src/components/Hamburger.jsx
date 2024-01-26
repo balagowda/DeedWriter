@@ -2,11 +2,18 @@ import React from "react";
 
 const Hamburger = () => {
 
+  const handleLabelClick = (e) => {
+    e.stopPropagation();
+  };
+
   return (
     <div className="hamburger" id="sidebar">
-      <div className="burger"></div>
-      <div className="burger"></div>
-      <div className="burger"></div>
+      <input type="checkbox" id="hamburger_check" />
+      <label htmlFor="hamburger_check" className="navigation__button" onClick={handleLabelClick}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
     </div>
   );
 };

@@ -10,12 +10,18 @@ import Partition from "./components/Partition";
 import Gift from "./components/Gift";
 import Sale from "./components/Sale";
 import Footer from "./components/Footer";
+import Exchange from "./components/Exchange";
+import Cancel from "./components/Cancel";
+import Reconveyance from "./components/Reconveyance";
+import SaleAgreement from "./components/SaleAgreement";
+import JointDevelopment from "./components/JointDevelopment";
+import Consent from "./components/Consent";
+import GeneralPowerofAttorney from "./components/GeneralPowerofAttorney";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        
         <Route
           path="/"
           element={
@@ -68,6 +74,46 @@ function App() {
         />
 
         <Route
+          path="/exchange"
+          element={
+            <>
+              <Navbar />
+              <Exchange />
+            </>
+          }
+        />
+
+        <Route
+          path="/reconveyance"
+          element={
+            <>
+              <Navbar />
+              <Reconveyance />
+            </>
+          }
+        />
+
+        <Route
+          path="/saleagreement"
+          element={
+            <>
+              <Navbar />
+              <SaleAgreement />
+            </>
+          }
+        />
+
+        <Route
+          path="/cancel"
+          element={
+            <>
+              <Navbar />
+              <Cancel />
+            </>
+          }
+        />
+
+        <Route
           path="/rent"
           element={
             <>
@@ -83,6 +129,36 @@ function App() {
             <>
               <Navbar />
               <Release />
+            </>
+          }
+        />
+
+        <Route
+          path="/joint"
+          element={
+            <>
+              <Navbar />
+              <JointDevelopment />
+            </>
+          }
+        />
+
+        <Route
+          path="/consent"
+          element={
+            <>
+              <Navbar />
+              <Consent />
+            </>
+          }
+        />
+
+        <Route
+          path="/attorney"
+          element={
+            <>
+              <Navbar />
+              <GeneralPowerofAttorney />
             </>
           }
         />

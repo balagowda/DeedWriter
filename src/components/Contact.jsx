@@ -16,7 +16,7 @@ const Contact = () => {
   // const longitude = "76.334935912306";
   // `https://www.google.com/maps?q=${latitude},${longitude}`
 
-  const handleClick = () => {
+  const handleMapClick = () => {
     const mapUrl = "https://maps.app.goo.gl/LjM9ruSQDW8TJVcc6"
     window.open(mapUrl, "_blank");
   };
@@ -55,7 +55,7 @@ const Contact = () => {
 
         <div className="dot-line">----------------------------</div>
 
-        <div className="contact-min-box" onClick={handleClick}>
+        <div className="contact-min-box" onClick={handleMapClick}>
           <p>
             <FontAwesomeIcon icon={faLocationDot} /> &nbsp;
             {language === "eng" ? "Map direction" : "ನಕ್ಷೆ ನಿರ್ದೇಶನ"}

@@ -11,12 +11,13 @@ const Navbar = () => {
   const [hamburger, setHamburger] = useState(true);
 
   const handleHamClick = () => {
-    setHamburger(!hamburger);
+    setHamburger((prevHamburger) => !prevHamburger);
+    console.log(hamburger);
   };
 
   return (
     <header className="navbar-container">
-      <div onClick={() => handleHamClick()}>
+      <div onClick={handleHamClick}>
         <Hamburger />
       </div>
       <div className="nav-img">

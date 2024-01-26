@@ -72,7 +72,7 @@ const Home = () => {
                 {language === "eng" ? "Rental Agreement" : "ಬಾಡಿಗೆ ಕರಾರು"}
               </div>
             </Link>
-            <Link to={"/reconverance"} className="link">
+            <Link to={"/reconveyance"} className="link">
               <div className="service-box">
                 {language === "eng" ? "Reconveyance Deed" : "ಬಿಡುಗಡೆ ಪತ್ರ"}
               </div>
@@ -89,7 +89,7 @@ const Home = () => {
                   : "ಜಂಟಿ ಅಭಿವೃದ್ಧಿ ಕರಾರು"}
               </div>
             </Link>
-            <Link to={"/concent"} className="link">
+            <Link to={"/consent"} className="link">
               <div className="service-box">
                 {language === "eng" ? "Consent Deed" : "ಒಪ್ಪಿಗೆ ಪತ್ರ"}
               </div>
@@ -99,6 +99,11 @@ const Home = () => {
                 {language === "eng"
                   ? "General Power Attorney"
                   : "ಸಾಮಾನ್ಯ ಅಧಿಕಾರ ಪತ್ರ"}
+              </div>
+            </Link>
+            <Link to={"/will"} className="link">
+              <div className="service-box">
+                {language === "eng" ? "Will" : "ಇಚ್ಛಾಪತ್ರ"}
               </div>
             </Link>
           </div>
