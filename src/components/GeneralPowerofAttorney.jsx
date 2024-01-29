@@ -88,7 +88,7 @@ const GeneralPowerofAttorney = () => {
           <details>
             <summary style={{ cursor: "pointer" }}>
               {language === "eng"
-                ? "Required Documents"
+                ? "Beneficiary"
                 : "ಸಾಮಾನ್ಯ ಅಧಿಕಾರ ಪಡೆವವರು"}
             </summary>
             <ul>
@@ -98,7 +98,7 @@ const GeneralPowerofAttorney = () => {
           <details>
             <summary style={{ cursor: "pointer" }}>
               {language === "eng"
-                ? "Required Documents"
+                ? "Grantor"
                 : "ಸಾಮಾನ್ಯ ಅಧಿಕಾರ ಕೊಡುವವರು"}
             </summary>
             <ul>

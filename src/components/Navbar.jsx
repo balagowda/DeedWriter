@@ -21,7 +21,7 @@ const Navbar = () => {
         <Hamburger />
       </div>
       <div className="nav-img">
-        <img src="" alt="img" />
+        <img src="/logo_.png" alt="img" />
       </div>
       <nav className="nav-links" id={hamburger ? "display-ham" : ""}>
         <Language />

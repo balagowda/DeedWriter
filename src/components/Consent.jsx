@@ -96,14 +96,14 @@ const Consent = () => {
             {language === "eng" ? "Required Documents" : "ಅಗತ್ಯ ದಾಖಲೆಗಳು"}
           </h4>
           <details>
-            <summary style={{ cursor: "pointer" }}>{language === "eng" ? "Required Documents" : "ಒಪ್ಪಿಗೆ ಕೊಡುವವರು"}</summary>
+            <summary style={{ cursor: "pointer" }}>{language === "eng" ? "Consent giver" : "ಒಪ್ಪಿಗೆ ಕೊಡುವವರು"}</summary>
             <ul>
               <li>Adhar Card (Any add.Proof)</li>
               <li>Family Tree</li>
             </ul>
           </details>
           <details>
-            <summary style={{ cursor: "pointer" }}>{language === "eng" ? "Required Documents" : "ಒಪ್ಪಿಗೆ ಪಡೆವವರು"}</summary>
+            <summary style={{ cursor: "pointer" }}>{language === "eng" ? "Consent receiver" : "ಒಪ್ಪಿಗೆ ಪಡೆವವರು"}</summary>
             <ul>
               <li>Adhar Card (Any add.Proof)</li>
               <li>Registered Document (xerox)</li>
