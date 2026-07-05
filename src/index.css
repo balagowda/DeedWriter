@@ -1,37 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
 :root {
-  --body_background: #ffffff;
-  --home_header: black;
-  --home_subheader: black;
-  --service_background: rgb(242, 245, 247);
-  --contact_background:linear-gradient(90.01deg, rgba(0, 179, 159, 0.54) 0.53%, rgba(71, 126, 150, 0.26) 51.1%, rgb(255, 255, 255,0.16) 99.99%);
-  --contact_card:#ffffff;
-  --developer_background: rgba(0, 179, 159,.8);
+  /* Colors - Light Mode (Default) */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-gold: #b48600; /* refined gold for better contrast on light */
+  --accent-blue: #1e3a8a; /* deep navy blue */
+  --border-color: #e2e8f0;
+  
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+
+  /* Legacy variable mappings just in case */
+  --body_background: var(--bg-primary);
+  --home_header: var(--text-primary);
+  --home_subheader: var(--text-secondary);
+  --service_background: var(--bg-secondary);
+  --contact_background: var(--bg-primary);
+  --contact_card: var(--bg-secondary);
+  --developer_background: var(--accent-blue);
 }
 
 [data-theme="dark"] {
-  --body_background: rgb(18, 18, 18);
-  --home_header: #ffffff;
-  --home_subheader: #ffffff;
-  --service_background: rgb(29, 29, 29);
-  --contact_background:linear-gradient(90.01deg, rgba(0, 179, 159, 0.54) 0.53%, rgba(71, 126, 150, 0.26) 51.1%, rgba(18, 18, 18, 0.16) 99.99%);
-  --contact_card:rgb(0, 179, 159);
-  --developer_background: rgba(0, 179, 159,.99);
+  /* Colors - Dark Mode */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --accent-gold: #fbbf24;
+  --accent-blue: #3b82f6;
+  --border-color: #334155;
+
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+  /* Legacy */
+  --body_background: var(--bg-primary);
+  --home_header: var(--text-primary);
+  --home_subheader: var(--text-secondary);
+  --service_background: var(--bg-secondary);
+  --contact_background: var(--bg-primary);
+  --contact_card: var(--bg-secondary);
+  --developer_background: var(--accent-blue);
 }
 
 * {
-  transition: all 0.3s ease-in-out;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Common Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
