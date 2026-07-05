@@ -19,6 +19,7 @@ const servicesList = [
   { path: "/consent", en: "Consent Deed", kn: "ಒಪ್ಪಿಗೆ ಪತ್ರ", icon: "✅" },
   { path: "/attorney", en: "General Power Attorney", kn: "ಸಾಮಾನ್ಯ ಅಧಿಕಾರ", icon: "⚖️" },
   { path: "/will", en: "Will", kn: "ಇಚ್ಛಾಪತ್ರ", icon: "✒️" },
+  { path: "/others", en: "Other Documents", kn: "ಇತರ ದಾಖಲೆಗಳು", icon: "📂" },
 ];
 
 const ServiceLayout = () => {

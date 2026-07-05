@@ -1,0 +1,39 @@
+/* =====================================================
+   OTHERS PAGE — Section Label Badges
+   ===================================================== */
+
+.others-section-label {
+  margin-bottom: 1.25rem;
+}
+
+.others-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-green);
+  background: var(--brand-green-light);
+  border: 1px solid rgba(26,71,49,0.12);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+}
+
+.others-badge--alt {
+  color: var(--brand-gold);
+  background: var(--brand-gold-light);
+  border-color: rgba(200,150,12,0.15);
+}
+
+[data-theme="dark"] .others-badge {
+  border-color: rgba(74,222,128,0.2);
+}
+
+[data-theme="dark"] .others-badge--alt {
+  color: var(--brand-gold);
+  background: var(--brand-gold-light);
+  border-color: rgba(245,158,11,0.2);
+}

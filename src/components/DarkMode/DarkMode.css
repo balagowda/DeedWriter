@@ -1,74 +1,77 @@
-.dark_mode {
-  margin-top: -20px;
-  margin-left: 10px;
-}
+/* =====================================================
+   DARK MODE TOGGLE — Clean Icon Button
+   ===================================================== */
 
-.dark_mode_label {
-  width: 65px;
-  height: 30px;
+.theme-toggle-btn {
   position: relative;
-  display: block;
-  background: #ebebeb;
-  border-radius: 200px;
-  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
-    inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-surface);
   cursor: pointer;
-  transition: 0.3s;
-}
-.dark_mode_label:after {
-  content: "";
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  background: linear-gradient(180deg, #ffcc89, #d8860b);
-  border-radius: 180px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-}
-.dark_mode_input {
-  width: 0;
-  height: 0;
-  visibility: hidden;
-}
-.dark_mode_input:checked + .dark_mode_label {
-  background: #242424;
-}
-.dark_mode_input:checked + .dark_mode_label:after {
-  left: 62px;
-  transform: translateX(-100%);
-  background: linear-gradient(180deg, #777, #3a3a3a);
-}
-.dark_mode_label:active:after {
-  width: 30px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  overflow: hidden;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.dark_mode_label svg {
-  position: absolute;
-  width: 20px;
-  top: 5px;
-  z-index: 100;
-}
-.dark_mode_label svg.sun {
-  left: 5px;
-  fill: #fff;
-  transition: 0.3s;
-}
-.dark_mode_label svg.moon {
-  left: 40px;
-  fill: #7e7e7e;
-  transition: 0.3s;
-}
-.dark_mode_input:checked + .dark_mode_label svg.sun {
-  fill: #7e7e7e;
-}
-.dark_mode_input:checked + .dark_mode_label svg.moon {
-  fill: #fff;
+.theme-toggle-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border-color: var(--border-strong);
 }
 
-@media (max-width: 790px) {
-  .dark_mode {
-    margin-bottom: 8px;
-  }
+.theme-toggle-btn:active {
+  transform: scale(0.94);
+}
+
+/* ---- Icon base ---- */
+.theme-icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  transition:
+    opacity 0.3s ease,
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* =====================================================
+   LIGHT MODE — show sun, hide moon
+   ===================================================== */
+.theme-toggle-btn.is-light .sun-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+  color: var(--brand-gold);
+}
+
+.theme-toggle-btn.is-light .moon-icon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+
+/* =====================================================
+   DARK MODE — show moon, hide sun
+   ===================================================== */
+.theme-toggle-btn.is-dark {
+  background: var(--bg-surface);
+  border-color: var(--border-color);
+  color: var(--brand-green);
+}
+
+.theme-toggle-btn.is-dark .moon-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.theme-toggle-btn.is-dark .sun-icon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
 }

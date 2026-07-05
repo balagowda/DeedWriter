@@ -1,26 +1,35 @@
 import React from "react";
-import { useLanguage } from '../../context/LanguageContext'
-import './language.css';
+import { useLanguage } from "../../context/LanguageContext";
+import "./language.css";
 
 const Language = () => {
-
-  const { toggleLanguage } = useLanguage();
-
-  const handleCheckboxChange = () => {
-    toggleLanguage();
-  };
+  const { language, toggleLanguage } = useLanguage();
+  const isKannada = language !== "eng";
 
   return (
-    <label className="lang_switch">
-      <input type="checkbox" id="language_check" onChange={handleCheckboxChange}/>
-      <div className="lang_slider lang_slider--0">ಕ</div>
-      <div className="lang_slider lang_slider--1">
-        <div></div>
-        <div></div>
-      </div>
-      <div className="lang_slider lang_slider--2"></div>
-      <div className="lang_slider lang_slider--3">Eng</div>
-    </label>
+    <div className="lang-toggle" role="group" aria-label="Language selector">
+      {/* Sliding indicator */}
+      <span
+        className="lang-indicator"
+        style={{ transform: isKannada ? "translateX(100%)" : "translateX(0%)" }}
+      />
+      <button
+        className={`lang-option ${!isKannada ? "lang-active" : ""}`}
+        onClick={() => isKannada && toggleLanguage()}
+        aria-label="Switch to English"
+        type="button"
+      >
+        EN
+      </button>
+      <button
+        className={`lang-option ${isKannada ? "lang-active" : ""}`}
+        onClick={() => !isKannada && toggleLanguage()}
+        aria-label="Switch to Kannada"
+        type="button"
+      >
+        ಕ
+      </button>
+    </div>
   );
 };
 

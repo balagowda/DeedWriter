@@ -21,6 +21,7 @@ const Home = () => {
     { path: "/consent", en: "Consent Deed", kn: "ಒಪ್ಪಿಗೆ ಪತ್ರ", icon: "✅" },
     { path: "/attorney", en: "General Power Attorney", kn: "ಸಾಮಾನ್ಯ ಅಧಿಕಾರ ಪತ್ರ", icon: "⚖️" },
     { path: "/will", en: "Will", kn: "ಇಚ್ಛಾಪತ್ರ", icon: "✒️" },
+    { path: "/others", en: "Other Documents", kn: "ಇತರ ದಾಖಲೆಗಳು", icon: "📂" },
   ];
 
   const filteredServices = services.filter((service) => {
@@ -32,27 +33,33 @@ const Home = () => {
     <div className="home-container">
       <section className="home-hero">
         <div className="hero-content">
+
+          {/* Licensed badge */}
+          <div className="hero-badge">
+            {language === "eng" ? "Licensed Document Professional" : "ಪರವಾನಗಿ ಪಡೆದ ದಾಖಲೆ ತಜ್ಞ"}
+          </div>
+
           <h1 className="hero-title">
             {language === "eng" ? "N Purushothama" : "ಎನ್ ಪುರುಷೋತ್ತಮ"}
           </h1>
-          
+
           <h2 className="hero-subtitle">
             {language === "eng" ? "Expert Document Writer" : "ನುರಿತ ಪತ್ರ ಬರಹಗಾರರು"}
             <span className="hero-highlight">
               {language === "eng" ? " • Heggadadevanakote" : " • ಹೆಗ್ಗಡದೇವನಕೋಟೆ"}
             </span>
           </h2>
-          
+
           <p className="hero-description">
             {language === "eng"
               ? "Professional drafting of Registration and Non-registration Documents with precision and legal accuracy."
               : "ನೋಂದಣಿ ಮತ್ತು ನೋಂದಣಿ-ರಹಿತ ಪತ್ರಗಳನ್ನು ನಿಖರವಾಗಿ ಮತ್ತು ಕಾನೂನುಬದ್ಧವಾಗಿ ಬರೆಯಲಾಗುವುದು."}
           </p>
-          
+
           <div className="search-bar-container">
-            <input 
-              type="text" 
-              className="search-input" 
+            <input
+              type="text"
+              className="search-input"
               placeholder={language === "eng" ? "Search for a deed..." : "ಪತ್ರಕ್ಕಾಗಿ ಹುಡುಕಿ..."}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -60,10 +67,28 @@ const Home = () => {
             <span className="search-icon">🔍</span>
           </div>
 
-          <div className="hero-cta" style={{marginTop: "2rem"}}>
+          <div className="hero-cta">
             <Link to={"/contact"} className="btn-primary">
               {language === "eng" ? "Contact Us" : "ಸಂಪರ್ಕಿಸಿ"}
             </Link>
+          </div>
+
+          {/* Trust badges */}
+          <div className="trust-badges">
+            <span className="trust-badge">
+              <span className="trust-badge-icon">🏅</span>
+              {language === "eng" ? "Licensed Professional" : "ಪರವಾನಗಿ ತಜ್ಞ"}
+            </span>
+            <span className="trust-dot"></span>
+            <span className="trust-badge">
+              <span className="trust-badge-icon">📋</span>
+              {language === "eng" ? "13+ Deed Types" : "13+ ಪತ್ರ ಪ್ರಕಾರಗಳು"}
+            </span>
+            <span className="trust-dot"></span>
+            <span className="trust-badge">
+              <span className="trust-badge-icon">📍</span>
+              {language === "eng" ? "Heggadadevanakote" : "ಹೆಗ್ಗಡದೇವನಕೋಟೆ"}
+            </span>
           </div>
         </div>
       </section>
@@ -73,7 +98,7 @@ const Home = () => {
           <h2>{language === "eng" ? "Our Services" : "ನಮ್ಮ ಸೇವೆಗಳು"}</h2>
           <div className="section-divider"></div>
         </div>
-        
+
         {filteredServices.length > 0 ? (
           <div className="service-grid">
             {filteredServices.map((service, index) => (
@@ -82,7 +107,9 @@ const Home = () => {
                 <h3 className="service-name">
                   {language === "eng" ? service.en : service.kn}
                 </h3>
-                <div className="service-hover-indicator">➔</div>
+                <div className="service-hover-indicator">
+                  {language === "eng" ? "View details" : "ವಿವರ ನೋಡಿ"} →
+                </div>
               </Link>
             ))}
           </div>

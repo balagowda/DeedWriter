@@ -21,6 +21,7 @@ import SaleAgreement from "./components/SaleAgreement";
 import JointDevelopment from "./components/JointDevelopment";
 import Consent from "./components/Consent";
 import GeneralPowerofAttorney from "./components/GeneralPowerofAttorney";
+import Others from "./components/Others";
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
           <Route path="/consent" element={<Consent />} />
           <Route path="/attorney" element={<GeneralPowerofAttorney />} />
           <Route path="/will" element={<Will />} />
+          <Route path="/others" element={<Others />} />
         </Route>
       </Routes>
     </div>

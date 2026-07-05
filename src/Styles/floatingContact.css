@@ -1,33 +1,39 @@
+/* =====================================================
+   FLOATING CONTACT — Pulsing FAB
+   ===================================================== */
+
 .floating-container {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 28px;
+  right: 28px;
   z-index: 9999;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 15px;
+  gap: 14px;
 }
 
+/* ---- Popup menu ---- */
 .floating-menu {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 15px;
-  animation: slideUpFade 0.3s ease forwards;
+  gap: 12px;
+  margin-bottom: 10px;
+  animation: slideUpFade 0.3s cubic-bezier(0.34,1.56,0.64,1) forwards;
 }
 
 @keyframes slideUpFade {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(16px) scale(0.92);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
+/* ---- Row item (label + icon) ---- */
 .floating-item {
   display: flex;
   align-items: center;
@@ -38,93 +44,121 @@
 .floating-label {
   background: var(--bg-secondary);
   color: var(--text-primary);
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 0.9rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border: 1px solid var(--border-color);
-  transition: all 0.2s;
+  font-size: 0.85rem;
+  box-shadow: var(--shadow-md);
+  border: 1.5px solid var(--border-color);
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .floating-item:hover .floating-label {
-  transform: translateX(-5px);
+  transform: translateX(-4px);
+  border-color: var(--brand-gold);
+  color: var(--brand-green);
 }
 
+/* ---- Icon bubbles ---- */
 .floating-icon {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  flex-shrink: 0;
 }
 
 .floating-item:hover .floating-icon {
-  transform: scale(1.1);
+  transform: scale(1.12);
 }
 
 .call-icon {
-  background: linear-gradient(135deg, #10b981, #059669); /* Green for call */
+  background: linear-gradient(135deg, #16a34a, #15803d);
 }
 
 .map-icon {
-  background: linear-gradient(135deg, #3b82f6, #2563eb); /* Blue for map */
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
 }
 
+/* =====================================================
+   MAIN FAB TOGGLE
+   ===================================================== */
 .floating-toggle {
-  width: 60px;
-  height: 60px;
+  position: relative;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-gold));
+  background: linear-gradient(135deg, var(--brand-green), #236040);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--shadow-brand);
+  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  border: none;
+}
+
+/* Pulse ring */
+.floating-toggle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--brand-green);
+  opacity: 0.4;
+  animation: pulse-ring 2s ease-out infinite;
+  z-index: -1;
 }
 
 .floating-toggle:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 28px rgba(26,71,49,0.4);
 }
 
 .floating-toggle.open {
   background: var(--bg-secondary);
   color: var(--text-primary);
-  border: 2px solid var(--border-color);
-  transform: rotate(90deg);
+  border: 1.5px solid var(--border-color);
+  transform: rotate(180deg);
+  box-shadow: var(--shadow-md);
+}
+
+.floating-toggle.open::before {
+  animation: none;
+  opacity: 0;
 }
 
 .toggle-icon {
-  transition: transform 0.3s;
+  transition: transform 0.35s ease;
 }
 
-.floating-toggle.open .toggle-icon {
-  transform: rotate(-90deg);
-}
-
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
 @media (max-width: 768px) {
   .floating-container {
     bottom: 20px;
-    right: 20px;
+    right: 18px;
   }
-  
+
   .floating-toggle {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
     font-size: 1.2rem;
   }
-  
+
   .floating-icon {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
   }
 }

@@ -1,64 +1,76 @@
+/* =====================================================
+   SERVICE PAGE (Sale, Gift, etc.) — Premium Card Treatment
+   ===================================================== */
+
+/* The sale-container is rendered inside .main-content from sidebar layout */
 .sale-container {
-  min-height: 100vh;
   width: 100%;
   background-color: var(--bg-primary);
-  padding: 120px 5% 5rem;
+  padding: 2rem 5% 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeInUp 0.5s ease both;
 }
 
+/* ---- Page Header ---- */
 .sale_header {
   width: 100%;
-  max-width: 900px;
+  max-width: 860px;
   text-align: center;
   margin-bottom: 2rem;
 }
 
 .sale_header h3 {
-  font-size: 2.5rem;
-  color: var(--accent-blue);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--text-primary);
   position: relative;
   display: inline-block;
-  padding-bottom: 0.5rem;
-}
-
-[data-theme="dark"] .sale_header h3 {
-  color: var(--accent-gold);
+  padding-bottom: 0.75rem;
 }
 
 .sale_header h3::after {
   content: '';
   position: absolute;
-  width: 50%;
+  width: 48px;
   height: 3px;
   bottom: 0;
-  left: 25%;
-  background-color: var(--accent-gold);
-  border-radius: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, var(--brand-green), var(--brand-gold));
+  border-radius: var(--radius-pill);
 }
 
+/* ---- Content Card ---- */
 .sale_body {
   width: 100%;
-  max-width: 900px;
+  max-width: 860px;
   background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  padding: 3rem;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2.5rem 2rem;
+  box-shadow: var(--shadow-md);
+  border-top: 4px solid var(--brand-green);
 }
 
+[data-theme="dark"] .sale_body {
+  border-top-color: var(--brand-green);
+}
+
+/* ---- Body Description ---- */
 .sale_body_details {
-  font-size: 1.125rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.85;
   color: var(--text-secondary);
   margin-bottom: 2.5rem;
   text-align: justify;
 }
 
+/* ---- Key Points List ---- */
 .sale_keypoints {
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .sale_keypoints ul {
@@ -66,125 +78,146 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .sale_keypoints ul li {
   color: var(--text-secondary);
-  font-size: 1.05rem;
-  line-height: 1.7;
-  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  padding: 1rem 1.25rem 1rem 1.4rem;
   background: var(--bg-primary);
-  border-left: 4px solid var(--accent-blue);
-  border-radius: 0 8px 8px 0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-[data-theme="dark"] .sale_keypoints ul li {
-  border-left-color: var(--accent-gold);
+  border-left: 3px solid var(--brand-green);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .sale_keypoints ul li:hover {
-  transform: translateX(5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-sm);
+  border-left-color: var(--brand-gold);
 }
 
 .bold {
   color: var(--text-primary);
   font-weight: 700;
   display: block;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
   font-family: var(--font-sans);
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
-/* Accordion for Required Documents */
+/* =====================================================
+   REQUIRED DOCUMENTS ACCORDION
+   ===================================================== */
 .sale_docs {
-  background: rgba(30, 58, 138, 0.03);
-  border-radius: 12px;
-  padding: 2rem;
-  border: 1px solid var(--border-color);
-}
-
-[data-theme="dark"] .sale_docs {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  border: 1.5px solid var(--border-color);
 }
 
 .sale_subheader {
-  font-size: 1.5rem;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 .sale_subheader::before {
-  content: '📁';
-  font-size: 1.25rem;
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: var(--brand-green);
+  border-radius: 3px;
+  flex-shrink: 0;
+  opacity: 0.7;
 }
 
 details {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+details:last-child {
+  margin-bottom: 0;
 }
 
 details[open] {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--brand-green);
 }
 
 [data-theme="dark"] details[open] {
-  border-color: var(--accent-gold);
+  border-color: var(--brand-green);
 }
 
 details > summary {
-  padding: 1.25rem 1.5rem;
-  font-size: 1.125rem;
+  padding: 1.1rem 1.4rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text-primary);
   cursor: pointer;
-  list-style: none; /* Hide default arrow */
+  list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--bg-secondary);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  user-select: none;
 }
 
 details > summary::-webkit-details-marker {
   display: none;
 }
 
+/* Custom chevron via pseudo-element */
 details > summary::after {
-  content: '+';
-  font-size: 1.5rem;
-  color: var(--accent-blue);
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: var(--brand-green-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a4731' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: center;
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 [data-theme="dark"] details > summary::after {
-  color: var(--accent-gold);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234ade80' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-color: var(--brand-green-light);
 }
 
 details[open] > summary::after {
-  transform: rotate(45deg);
+  transform: rotate(180deg);
 }
 
 details > summary:hover {
-  background-color: rgba(30, 58, 138, 0.02);
-}
-
-[data-theme="dark"] details > summary:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--bg-surface);
+  color: var(--brand-green);
 }
 
 details > ul {
-  padding: 1rem 1.5rem 1.5rem 2.5rem;
+  padding: 1rem 1.4rem 1.4rem 2.4rem;
   margin: 0;
   border-top: 1px solid var(--border-color);
   background-color: var(--bg-primary);
@@ -192,36 +225,48 @@ details > ul {
 
 details > ul li {
   color: var(--text-secondary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
   line-height: 1.6;
   position: relative;
   list-style: none;
+  font-size: 0.95rem;
 }
 
 details > ul li::before {
   content: '✓';
   position: absolute;
   left: -1.5rem;
-  color: var(--accent-gold);
+  color: var(--brand-green);
   font-weight: bold;
+  font-size: 0.85rem;
 }
 
 details > ul h4 {
   margin: 1rem 0 0.5rem -1rem;
   color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* Responsive */
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
 @media (max-width: 768px) {
   .sale_body {
-    padding: 1.5rem;
+    padding: 1.5rem 1.25rem 1.25rem;
   }
-  
+
   .sale_header h3 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
-  
+
   .sale_body_details {
-    font-size: 1rem;
+    font-size: 0.975rem;
+  }
+
+  .sale_docs {
+    padding: 1.25rem;
   }
 }
