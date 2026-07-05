@@ -1,15 +1,23 @@
 .navbar-container {
-  width: 100%;
-  height: 80px;
+  width: 90%;
+  max-width: 1200px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
-  padding: 0 5%;
-  /* Using glass-panel from index.css, so no background color needed here */
+  padding: 0 2rem;
+  border-radius: 100px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .nav-brand {
@@ -19,14 +27,18 @@
 }
 
 .nav-logo {
-  height: 60px;
-  width: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 2px solid var(--accent-gold);
 }
 
 .nav-logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 15px rgba(180, 134, 0, 0.3);
 }
 
 .nav-links {

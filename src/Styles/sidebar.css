@@ -1,0 +1,130 @@
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  padding-top: 110px; /* Offset for floating navbar */
+  background-color: var(--bg-primary);
+}
+
+.sidebar {
+  width: 280px;
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  padding: 2rem 1.5rem;
+  position: sticky;
+  top: 110px; /* Offset for floating navbar */
+  height: calc(100vh - 110px);
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 4px;
+}
+
+.sidebar-title {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  padding-left: 0.5rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background-color: rgba(30, 58, 138, 0.05);
+  color: var(--accent-blue);
+}
+
+[data-theme="dark"] .sidebar-link:hover {
+  background-color: rgba(251, 191, 36, 0.1);
+  color: var(--accent-gold);
+}
+
+.active-sidebar-link {
+  background-color: var(--accent-blue);
+  color: #fff !important;
+  box-shadow: 0 4px 10px rgba(30, 58, 138, 0.2);
+}
+
+[data-theme="dark"] .active-sidebar-link {
+  background-color: var(--accent-gold);
+  color: var(--bg-primary) !important;
+}
+
+.main-content {
+  flex-grow: 1;
+  width: calc(100% - 280px);
+  display: flex;
+  flex-direction: column;
+}
+
+.breadcrumbs {
+  padding: 1.5rem 5% 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.breadcrumbs a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+[data-theme="dark"] .breadcrumbs a {
+  color: var(--accent-gold);
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  margin: 0 0.5rem;
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.breadcrumb-current {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Adjust the sale-container padding since it's now inside the layout */
+.main-content .sale-container {
+  padding-top: 2rem;
+  min-height: calc(100vh - 150px);
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    display: none; /* Hide sidebar on mobile, they can use Home page grid */
+  }
+  .main-content {
+    width: 100%;
+  }
+}

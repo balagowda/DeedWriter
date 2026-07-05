@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 :root {
-  /* Colors - Light Mode (Default) */
+  /* Colors - Light Mode (Professional & Trustworthy) */
   --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
-  --text-primary: #0f172a;
+  --bg-gradient: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
+  --text-primary: #1e293b;
   --text-secondary: #475569;
   --accent-gold: #b48600; /* refined gold for better contrast on light */
   --accent-blue: #1e3a8a; /* deep navy blue */
   --border-color: #e2e8f0;
   
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.4);
   --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
 
   --font-sans: 'Inter', sans-serif;
@@ -28,18 +29,19 @@
 }
 
 [data-theme="dark"] {
-  /* Colors - Dark Mode */
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
+  /* Colors - Dark Mode (Sleek, Modern Corporate) */
+  --bg-primary: #0b1121;
+  --bg-secondary: #162032;
+  --bg-gradient: linear-gradient(135deg, #0b1121 0%, #162032 100%);
   --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
+  --text-secondary: #94a3b8;
   --accent-gold: #fbbf24;
   --accent-blue: #3b82f6;
-  --border-color: #334155;
+  --border-color: #2e4057;
 
-  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-bg: rgba(22, 32, 50, 0.75);
   --glass-border: rgba(255, 255, 255, 0.05);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
 
   /* Legacy */
   --body_background: var(--bg-primary);
@@ -48,7 +50,7 @@
   --service_background: var(--bg-secondary);
   --contact_background: var(--bg-primary);
   --contact_card: var(--bg-secondary);
-  --developer_background: var(--accent-blue);
+  --developer_background: #0f172a;
 }
 
 * {
@@ -59,12 +61,13 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-primary);
+  background: var(--bg-gradient);
+  background-attachment: fixed; /* so the gradient doesn't stretch weirdly on scroll */
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {

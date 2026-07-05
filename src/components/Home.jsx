@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Styles/home.css";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 
 const Home = () => {
   const { language } = useLanguage();
+  const [searchTerm, setSearchTerm] = useState("");
 
   const services = [
     { path: "/sale", en: "Sale Deed", kn: "ಕ್ರಯ ಪತ್ರ", icon: "📄" },
@@ -21,6 +22,11 @@ const Home = () => {
     { path: "/attorney", en: "General Power Attorney", kn: "ಸಾಮಾನ್ಯ ಅಧಿಕಾರ ಪತ್ರ", icon: "⚖️" },
     { path: "/will", en: "Will", kn: "ಇಚ್ಛಾಪತ್ರ", icon: "✒️" },
   ];
+
+  const filteredServices = services.filter((service) => {
+    const term = searchTerm.toLowerCase();
+    return service.en.toLowerCase().includes(term) || service.kn.includes(term);
+  });
 
   return (
     <div className="home-container">
@@ -43,7 +49,18 @@ const Home = () => {
               : "ನೋಂದಣಿ ಮತ್ತು ನೋಂದಣಿ-ರಹಿತ ಪತ್ರಗಳನ್ನು ನಿಖರವಾಗಿ ಮತ್ತು ಕಾನೂನುಬದ್ಧವಾಗಿ ಬರೆಯಲಾಗುವುದು."}
           </p>
           
-          <div className="hero-cta">
+          <div className="search-bar-container">
+            <input 
+              type="text" 
+              className="search-input" 
+              placeholder={language === "eng" ? "Search for a deed..." : "ಪತ್ರಕ್ಕಾಗಿ ಹುಡುಕಿ..."}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <span className="search-icon">🔍</span>
+          </div>
+
+          <div className="hero-cta" style={{marginTop: "2rem"}}>
             <Link to={"/contact"} className="btn-primary">
               {language === "eng" ? "Contact Us" : "ಸಂಪರ್ಕಿಸಿ"}
             </Link>
@@ -57,17 +74,23 @@ const Home = () => {
           <div className="section-divider"></div>
         </div>
         
-        <div className="service-grid">
-          {services.map((service, index) => (
-            <Link to={service.path} className="service-card" key={index}>
-              <div className="service-icon">{service.icon}</div>
-              <h3 className="service-name">
-                {language === "eng" ? service.en : service.kn}
-              </h3>
-              <div className="service-hover-indicator">➔</div>
-            </Link>
-          ))}
-        </div>
+        {filteredServices.length > 0 ? (
+          <div className="service-grid">
+            {filteredServices.map((service, index) => (
+              <Link to={service.path} className="service-card" key={index}>
+                <div className="service-icon">{service.icon}</div>
+                <h3 className="service-name">
+                  {language === "eng" ? service.en : service.kn}
+                </h3>
+                <div className="service-hover-indicator">➔</div>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="no-results">
+            <p>{language === "eng" ? "No deeds found matching your search." : "ನಿಮ್ಮ ಹುಡುಕಾಟಕ್ಕೆ ಹೊಂದುವ ಯಾವುದೇ ಪತ್ರಗಳು ಕಂಡುಬಂದಿಲ್ಲ."}</p>
+          </div>
+        )}
       </section>
     </div>
   );
