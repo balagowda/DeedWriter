@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/DeedWriter/static/css/main.2ef8cced.css",
+    "main.js": "/DeedWriter/static/js/main.e9a57ec3.js",
+    "index.html": "/DeedWriter/index.html",
+    "main.2ef8cced.css.map": "/DeedWriter/static/css/main.2ef8cced.css.map",
+    "main.e9a57ec3.js.map": "/DeedWriter/static/js/main.e9a57ec3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ef8cced.css",
+    "static/js/main.e9a57ec3.js"
+  ]
+}
