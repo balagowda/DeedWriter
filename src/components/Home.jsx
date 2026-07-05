@@ -56,7 +56,7 @@ const Home = () => {
               : "ನೋಂದಣಿ ಮತ್ತು ನೋಂದಣಿ-ರಹಿತ ಪತ್ರಗಳನ್ನು ನಿಖರವಾಗಿ ಮತ್ತು ಕಾನೂನುಬದ್ಧವಾಗಿ ಬರೆಯಲಾಗುವುದು."}
           </p>
 
-          <div className="search-bar-container">
+          {/* <div className="search-bar-container">
             <input
               type="text"
               className="search-input"
@@ -65,7 +65,7 @@ const Home = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             <span className="search-icon">🔍</span>
-          </div>
+          </div> */}
 
           <div className="hero-cta">
             <Link to={"/contact"} className="btn-primary">
@@ -118,6 +118,51 @@ const Home = () => {
             <p>{language === "eng" ? "No deeds found matching your search." : "ನಿಮ್ಮ ಹುಡುಕಾಟಕ್ಕೆ ಹೊಂದುವ ಯಾವುದೇ ಪತ್ರಗಳು ಕಂಡುಬಂದಿಲ್ಲ."}</p>
           </div>
         )}
+      </section>
+
+      {/* Experience & Trust Section */}
+      <section className="home-stats">
+        <div className="stats-content">
+          <div className="stats-text">
+            <h2>
+              {language === "eng" ? "Trusted by Generations" : "ಪೀಳಿಗೆಗಳಿಂದ ನಂಬಿಕಾರ್ಹ"}
+            </h2>
+            <div className="stats-grid">
+              <div className="stat-item">
+                <span className="stat-number">25+</span>
+                <span className="stat-label">
+                  {language === "eng" ? "Years of Experience" : "ವರ್ಷಗಳ ಅನುಭವ"}
+                </span>
+              </div>
+              <div className="stat-divider"></div>
+              <div className="stat-item">
+                <span className="stat-number">5000+</span>
+                <span className="stat-label">
+                  {language === "eng" ? "Happy Customers" : "ಸಂತೋಷದ ಗ್ರಾಹಕರು"}
+                </span>
+              </div>
+            </div>
+            <p className="stats-description">
+              {language === "eng" 
+                ? "Providing expert legal documentation services with unmatched precision, integrity, and deep understanding of local property laws since 2000."
+                : "2000 ರಿಂದಲೂ ನಿಖರತೆ, ಸಮಗ್ರತೆ ಮತ್ತು ಸ್ಥಳೀಯ ಆಸ್ತಿ ಕಾನೂನುಗಳ ಆಳವಾದ ತಿಳುವಳಿಕೆಯೊಂದಿಗೆ ಪರಿಣಿತ ಕಾನೂನು ದಾಖಲೀಕರಣ ಸೇವೆಗಳನ್ನು ಒದಗಿಸುತ್ತಿದ್ದೇವೆ."}
+            </p>
+          </div>
+          
+          <div className="stats-seal-wrapper">
+            <div className="seal-container">
+              <svg className="seal-text-svg" viewBox="0 0 100 100">
+                <path id="seal-path" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
+                <text>
+                  <textPath href="#seal-path" startOffset="0%">
+                    • TRUST & EXPERIENCE SINCE 2000 • TRUST & EXPERIENCE SINCE 2000 
+                  </textPath>
+                </text>
+              </svg>
+              <div className="seal-center-icon">⚖️</div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );

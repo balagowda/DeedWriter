@@ -24,13 +24,7 @@ const Footer = () => {
         <div className="footer-col">
           <h4>Services</h4>
           <ul className="footer-links">
-            <li><Link to="/sale">Sale Deed</Link></li>
-            <li><Link to="/gift">Gift Deed</Link></li>
-            <li><Link to="/rent">Rental Agreement</Link></li>
-            <li><Link to="/partition">Partition Deed</Link></li>
-            <li><Link to="/will">Will</Link></li>
-            <li><Link to="/attorney">Power of Attorney</Link></li>
-            <li><Link to="/others">Other Documents</Link></li>
+            <li><Link to="/">All Deeds</Link></li>
           </ul>
         </div>
 
