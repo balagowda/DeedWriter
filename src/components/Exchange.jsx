@@ -88,7 +88,7 @@ const Exchange = () => {
           <h4 className="sale_subheader">
             {language === "eng" ? "Required Documents" : "ಅಗತ್ಯ ದಾಖಲೆಗಳು"}
           </h4>
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>{language === "eng" ? "Documents" : "ದಾಖಲೆಗಳು"}</summary>
             <ul>
               <li>Adhar Card (Any add.Proof)</li>

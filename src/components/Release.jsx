@@ -122,7 +122,7 @@ const Release = () => {
           <h4 className="sale_subheader">
             {language === "eng" ? "Required Documents" : "ಅಗತ್ಯ ದಾಖಲೆಗಳು"}
           </h4>
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>
               {language === "eng" ? "releasee" : "ಹಕ್ಕು ಕೊಡುವವರು"}
             </summary>
@@ -130,7 +130,7 @@ const Release = () => {
               <li>Adhar Card (Any add.Proof)</li>
             </ul>
           </details>
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>
               {language === "eng" ? "releasor" : "ಹಕ್ಕು ಪಡೆವವರು"}
             </summary>

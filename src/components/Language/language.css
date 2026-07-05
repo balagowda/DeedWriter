@@ -13,11 +13,18 @@
   gap: 0;
   height: 34px;
   flex-shrink: 0;
+  cursor: pointer;                /* whole pill is clickable */
+  user-select: none;
   transition: border-color 0.2s ease;
 }
 
 .lang-toggle:hover {
   border-color: var(--border-strong);
+}
+
+.lang-toggle:focus-visible {
+  outline: 2px solid var(--brand-green);
+  outline-offset: 2px;
 }
 
 /* Sliding indicator background */
@@ -38,13 +45,11 @@
   background: var(--brand-green-mid);
 }
 
-/* Individual option buttons */
+/* Individual option labels — visual only, clicks bubble to parent */
 .lang-option {
   position: relative;
   z-index: 1;
-  border: none;
-  background: transparent;
-  cursor: pointer;
+  pointer-events: none;           /* clicks pass through to parent toggle */
   font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 700;
@@ -62,15 +67,11 @@
   line-height: 1;
 }
 
-.lang-option:hover:not(.lang-active) {
-  color: var(--text-secondary);
-}
-
 .lang-option.lang-active {
   color: #ffffff;
-  cursor: default;
 }
 
 [data-theme="dark"] .lang-option.lang-active {
   color: #ffffff;
 }
+

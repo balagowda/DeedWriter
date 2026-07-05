@@ -101,13 +101,13 @@ const Sale = () => {
           <h4 className="sale_subheader">
             {language === "eng" ? "Required Documents" : "ಅಗತ್ಯ ದಾಖಲೆಗಳು"}
           </h4>
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>{language === "eng" ? "Buyer" : "ಖರೀದಿದಾರ"}</summary>
             <ul>
               <li>Adhar Card (Any add.Proof)</li>
             </ul>
           </details>
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>{language === "eng" ? "Seller" : "ಮಾರಾಟಗಾರ"}</summary>
             <ul>
               <li>Adhar Card (Any add.Proof)</li>

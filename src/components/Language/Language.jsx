@@ -7,28 +7,23 @@ const Language = () => {
   const isKannada = language !== "eng";
 
   return (
-    <div className="lang-toggle" role="group" aria-label="Language selector">
-      {/* Sliding indicator */}
+    // Clicking anywhere on the pill — container OR either label — toggles language
+    <div
+      className="lang-toggle"
+      role="button"
+      aria-label={isKannada ? "Switch to English" : "ಕನ್ನಡಕ್ಕೆ ಬದಲಿಸಿ"}
+      onClick={toggleLanguage}
+      tabIndex={0}
+      onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && toggleLanguage()}
+    >
+      {/* Sliding green indicator */}
       <span
         className="lang-indicator"
         style={{ transform: isKannada ? "translateX(100%)" : "translateX(0%)" }}
       />
-      <button
-        className={`lang-option ${!isKannada ? "lang-active" : ""}`}
-        onClick={() => isKannada && toggleLanguage()}
-        aria-label="Switch to English"
-        type="button"
-      >
-        EN
-      </button>
-      <button
-        className={`lang-option ${isKannada ? "lang-active" : ""}`}
-        onClick={() => !isKannada && toggleLanguage()}
-        aria-label="Switch to Kannada"
-        type="button"
-      >
-        ಕ
-      </button>
+      {/* Labels — purely visual, clicks bubble up to the parent */}
+      <span className={`lang-option ${!isKannada ? "lang-active" : ""}`}>EN</span>
+      <span className={`lang-option ${isKannada ? "lang-active" : ""}`}>ಕ</span>
     </div>
   );
 };

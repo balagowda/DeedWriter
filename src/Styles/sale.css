@@ -113,10 +113,10 @@
    REQUIRED DOCUMENTS ACCORDION
    ===================================================== */
 .sale_docs {
-  background: var(--bg-surface);
+  /* background: var(--bg-surface); */
   border-radius: var(--radius-md);
   padding: 1.75rem;
-  border: 1.5px solid var(--border-color);
+  /* border: 1.5px solid var(--border-color); */
 }
 
 .sale_subheader {

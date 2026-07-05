@@ -106,7 +106,7 @@ const Partition = () => {
         </div>
         <div className="sale_docs">
           <h4 className="sale_subheader">{language==='eng'?"Required Documents":"ಅಗತ್ಯ ದಾಖಲೆಗಳು"}</h4>
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>{language==='eng'?"All Co-owners":"ಎಲ್ಲಾ ಸಹ-ಮಾಲೀಕರು"}</summary>
             <ul>
               <li>Adhar Card (Any add.Proof)</li>

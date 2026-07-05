@@ -91,13 +91,13 @@ const Gift = () => {
           <h4 className="sale_subheader">
             {language === "eng" ? "Required Documents" : "ಅಗತ್ಯ ದಾಖಲೆಗಳು"}
           </h4>
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>{language === "eng" ? "Donee or Recipient" : "ಸ್ವೀಕೃತದಾರ"}</summary>
             <ul>
               <li>Adhar Card (Any add.Proof)</li>
             </ul>
           </details>
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>{language === "eng" ? "Donor or Giver" : "ಕೊಡುಗೆದಾರ"}</summary>
             <ul>
               <li>Adhar Card (Any add.Proof)</li>

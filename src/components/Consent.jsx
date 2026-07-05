@@ -95,14 +95,14 @@ const Consent = () => {
           <h4 className="sale_subheader">
             {language === "eng" ? "Required Documents" : "ಅಗತ್ಯ ದಾಖಲೆಗಳು"}
           </h4>
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>{language === "eng" ? "Consent giver" : "ಒಪ್ಪಿಗೆ ಕೊಡುವವರು"}</summary>
             <ul>
               <li>Adhar Card (Any add.Proof)</li>
               <li>Family Tree</li>
             </ul>
           </details>
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>{language === "eng" ? "Consent receiver" : "ಒಪ್ಪಿಗೆ ಪಡೆವವರು"}</summary>
             <ul>
               <li>Adhar Card (Any add.Proof)</li>

@@ -231,7 +231,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    padding: 1.5rem 1.5rem 3rem;
+    padding: 1.5rem 1.5rem 2rem;
     gap: 0.25rem;
     transform: translateY(-8px);
     opacity: 0;
@@ -265,13 +265,16 @@
     background: var(--brand-green-light) !important;
   }
 
-  /* Mobile controls row inside drawer */
+  /* Mobile controls row — sits right below nav links, not at the bottom */
   .nav-mobile-controls {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1.5rem 1rem 0;
-    margin-top: auto;
+    padding: 1.25rem 1rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-surface);
+    border-radius: var(--radius-md);
   }
 
   .nav-mobile-controls-label {

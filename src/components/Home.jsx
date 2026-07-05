@@ -82,7 +82,7 @@ const Home = () => {
             <span className="trust-dot"></span>
             <span className="trust-badge">
               <span className="trust-badge-icon">📋</span>
-              {language === "eng" ? "13+ Deed Types" : "13+ ಪತ್ರ ಪ್ರಕಾರಗಳು"}
+              {language === "eng" ? "25+ Deed Types" : "25+ ಪತ್ರ ಪ್ರಕಾರಗಳು"}
             </span>
             <span className="trust-dot"></span>
             <span className="trust-badge">

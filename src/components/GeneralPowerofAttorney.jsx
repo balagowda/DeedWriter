@@ -85,7 +85,7 @@ const GeneralPowerofAttorney = () => {
           <h4 className="sale_subheader">
             {language === "eng" ? "Required Documents" : "ಅಗತ್ಯ ದಾಖಲೆಗಳು"}
           </h4>
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>
               {language === "eng"
                 ? "Beneficiary"
@@ -95,7 +95,7 @@ const GeneralPowerofAttorney = () => {
               <li>Adhar Card (Any add.Proof)</li>
             </ul>
           </details>
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>
               {language === "eng"
                 ? "Grantor"

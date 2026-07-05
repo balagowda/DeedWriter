@@ -166,7 +166,7 @@ const Others = () => {
             {language === "eng" ? "Required Documents" : "ಅಗತ್ಯ ದಾಖಲೆಗಳು"}
           </h4>
 
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>
               {language === "eng" ? "For Affidavit / Undertaking / Declaration" : "ಅಫಿಡವಿಟ್ / ಉಪಕ್ರಮ / ಘೋಷಣೆಗಾಗಿ"}
             </summary>
@@ -177,7 +177,7 @@ const Others = () => {
             </ul>
           </details>
 
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>
               {language === "eng" ? "For Khata Transfer" : "ಖಾತಾ ವರ್ಗಾವಣೆಗಾಗಿ"}
             </summary>
@@ -190,7 +190,7 @@ const Others = () => {
             </ul>
           </details>
 
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>
               {language === "eng" ? "For Mutation (Phodi)" : "ಮ್ಯುಟೇಶನ್ (ಫೋಡಿ) ಗಾಗಿ"}
             </summary>
@@ -202,7 +202,7 @@ const Others = () => {
             </ul>
           </details>
 
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>
               {language === "eng" ? "For Family Tree / Legal Heir Certificate" : "ಕುಟುಂಬ ವೃಕ್ಷ / ಕಾನೂನು ವಾರಸು ಪ್ರಮಾಣಪತ್ರಕ್ಕಾಗಿ"}
             </summary>
@@ -214,7 +214,7 @@ const Others = () => {
             </ul>
           </details>
 
-          <details>
+          <details open>
             <summary style={{ cursor: "pointer" }}>
               {language === "eng" ? "For Agreement / SPA" : "ಒಪ್ಪಂದ / SPA ಗಾಗಿ"}
             </summary>
